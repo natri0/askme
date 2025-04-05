@@ -3,6 +3,7 @@ import html from "index.html";
 // REPLACE THOSE WITH YOUR OWN VALUES!
 const botToken = "";
 const meUserId = -1;
+const baseUrl  = "";
 
 const tu = (url) => `https://api.telegram.org/bot${botToken}/` + url;
 
@@ -52,7 +53,7 @@ export default {
         console.error(await result.text());
         return new Response("error :c", { status: 500 });
       } else {
-        return Response.redirect("https://ask.lina.moe/sent");
+        return Response.redirect(`${baseUrl}/sent`);
       }
     }
 
