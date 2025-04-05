@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ask me anything!</title>
+    <style>
+        form {
+            margin: 1rem auto;
+            border: 1px solid black;
+            padding: 1rem;
+            max-width: fit-content;
+        }
+        form>* { display: block; }
+        p { text-align: center; }
+        button { width: 100%; }
+        input[type=text] { min-width: 50ch; }
+        p.if-sent { color: green; display: none; }
+        p.if-sent:target { display: block; }
+    </style>
+</head>
+<body>
+    <form action="/message" method="post">
+        <p class="if-sent">the message was sent!</p>
+        <p style="margin-top: 0">ask (or tell) me anything!</p>
+        <input name="cw" type="text" placeholder="content warning, if any">
+        <input name="text" type="text" placeholder="message">
+        <label for="nopost">
+            <input name="nopost" type="checkbox">
+            check this box if i shouldn't answer it publicly!
+        </label>
+        <button type="submit">ask!</button>
+        <p>this whole thing is <a href="https://github.com/natri0/askme">open-source</a>!</p>
+    </form>
+</body>
+</html>
